@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- <link rel="icon" type="image/x-icon" href="favicon.ico" /> -->
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" />
+  <link href="./style.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="centered">
+    <h1>cod.social</h1>
+    <h2>Find people with mics to play CoD with</h2>
+    <h3>Source Code: <a href="https://github.com/rpgwaiter/codfriends">github</a> | Questions/Ideas? <a
+        href="mailto:admin@cod.social">admin@cod.social</a></h3>
+    <div class="container">
+      <form action="/api/submit" id="form-submit-player">
+
+        <fieldset id="pii">
+          <legend>Your Info:</legend>
+          <label>ATVI ID: <br /><input type="text" name="atvid" id="form-atvid"></label>
+
+          <fieldset id="radio-platform">
+            <legend>Your Device:</legend>
+
+            <label><input type="radio" id="platform-pc" name="platform" value="pc" checked /> PC</label>
+            <label><input type="radio" id="platform-xbox" name="platform" value="xbox" /> Xbox</label>
+            <label><input type="radio" id="platform-ps" name="platform" value="ps" /> PS</label>
+
+          </fieldset>
+        </fieldset>
+
+        <fieldset id="radio-rank">
+          <legend>Your rank:</legend>
+
+          <label><input type="radio" id="rank-bronze" name="rank" value="Bronze" checked /> Bronze</label>
+          <label><input type="radio" id="rank-gold" name="rank" value="Gold" /> Gold</label>
+          <label><input type="radio" id="rank-platinum" name="rank" value="Platinum" /> Platinum</label>
+          <label><input type="radio" id="rank-diamond" name="rank" value="Diamond" /> Diamond</label>
+          <label><input type="radio" id="rank-crimson" name="rank" value="Crimson" /> Crimson</label>
+          <label><input type="radio" id="rank-iridescent" name="rank" value="Iridescent" /> Iridescent</label>
+
+        </fieldset>
+
+        <fieldset id="radio-partysize">
+          <legend>Party Size:</legend>
+
+          <label><input type="radio" id="party-solo" name="party" value=1 checked /> Solo</label>
+          <label><input type="radio" id="party-duo" name="party" value=2 /> Duo</label>
+          <label><input type="radio" id="party-trio" name="party" value=3 /> Trio</label>
+
+        </fieldset>
+
+        <fieldset id="post-timer">
+          <legend>Post Life:</legend>
+
+          <label><input type="radio" id="ttl-30min" name="ttl" value=30 checked /> 30 Mins.</label>
+          <label><input type="radio" id="ttl-300min" name="ttl" value=300 /> 5 Hours</label>
+          <label><input type="radio" id="ttl-1month" name="ttl" value=43200 /> 1 Month</label>
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Other Stuff:</legend>
+
+          <label><input type="checkbox" id="hasMic" name="hasMic" value="true" checked /> I have a mic</label>
+          <label><input type="checkbox" id="noLife" name="noLife" value="true" /> I no-life cod</label>
+
+        </fieldset>
+
+        <fieldset>
+          <legend>Extra Notes:</legend>
+          <textarea id="extra-notes" name="message" rows="5" cols="20" maxlength="100"
+            placeholder="Must be an adult, etc..."></textarea>
+        </fieldset>
+
+        <input type="submit" value="Join the club">
+      </form>
+    </div>
+
+    <br />
+
+    <!-- Posts below -->
+    <table id="post-table">
+      <tr class="post-table-head">
+        <th>ATVI ID</th>
+        <th>Platform</th>
+        <th>Rank</th>
+        <th>Party</th>
+        <th>Posted</th>
+        <th>Notes</th>
+      </tr>
+
+      <!-- Yes, my post is hardcoded at the top. I feel no shame -->
+      <tr class="post-row">
+        <td class="post-element">Catch A Stabbin#9697202</td>
+        <td class="post-element">pc</td>
+        <td class="post-element">Platinum</td>
+        <td class="post-element">1</td>
+        <td class="post-element">A while ago</td>
+        <td class="post-element">I made this website, that counts for something right?</td>
+      </tr>
+
+    </table>
+
+    <script>
+      const postTable = document.getElementById('post-table')
+      fetch('/api/posts')
+        .then(r => r.json())
+        .then(r => {
+          for (const post of r) {
+            const row = document.createElement('tr')
+            row.className = "post-row"
+            postTable.appendChild(row)
+
+            const doRow = e => {
+              const el = document.createElement('td')
+              el.textContent = e
+              el.className = 'post-element'
+
+              // Alternate row colors
+              if (r.indexOf(post) % 2 === 0) {
+                el.style = 'background-color: rgb(25, 25, 25);'
+              }
+              row.appendChild(el)
+            }
+
+            doRow(post.atvid)
+            doRow(post.platform)
+            doRow(post.rank)
+            doRow(post.party)
+            doRow(post.relTime)
+            doRow(decodeURIComponent(post.message))
+          }
+        })
+
+    </script>
+  </div>
+</body>
+
+</html>

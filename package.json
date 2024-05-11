@@ -1,0 +1,16 @@
+{
+	"name": "cod-lfg",
+	"version": "0.0.0",
+	"private": true,
+	"scripts": {
+		"deploy": "wrangler deploy src/index.ts",
+		"start": "wrangler dev --ip 0.0.0.0 src/index.ts"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20240502.0",
+		"wrangler": "^3.0.0"
+	},
+	"dependencies": {
+		"@cloudflare/kv-asset-handler": "^0.3.2"
+	}
+}
