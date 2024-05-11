@@ -1,5 +1,7 @@
 # cod-lfg - dead simple ranked Call of Duty party finder
 
+Hosted: https://cod.social
+
 Why doesn't this exist already? Are there that few people playing ranked cod multiplayer?
 
 Anyways, use cod-lfg to post your info in the hopes of getting added to a group of ranked CoD players
