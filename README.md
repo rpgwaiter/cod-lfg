@@ -15,6 +15,7 @@ Anyways, use cod-lfg to post your info in the hopes of getting added to a group 
 - [ ] sort by most recent
 - [ ] anti-abuse
 - [ ] styling
+- [ ] CI
 - [ ] maybe a legal disclaimer?
 
 
