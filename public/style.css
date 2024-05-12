@@ -19,9 +19,7 @@ h2 {
   text-align: center;
 
   width: 80vw;
-  /* set the width to the full viewport width */
   height: 80vh;
-  /* set the height to the full viewport height */
   display: flexbox;
   justify-content: center;
   align-items: center;
@@ -110,9 +108,7 @@ form>input[type="text"] {
     text-align: center;
 
     width: 95vw;
-    /* set the width to the full viewport width */
     height: 95vh;
-    /* set the height to the full viewport height */
     display: flexbox;
     justify-content: center;
     align-items: center;
