@@ -16,34 +16,37 @@
     <div class="container">
       <form action="/api/submit" id="form-submit-player">
 
-        <fieldset id="pii">
+        <div class="input-grid">
+        <fieldset id="pii" class="post-field-large">
           <legend>Your Info:</legend>
           <label>ATVI ID: <br /><input type="text" name="atvid" id="form-atvid"></label>
 
-          <fieldset id="radio-platform">
-            <legend>Your Device:</legend>
+          <fieldset id="radio-platform" class="post-field">
+            <!-- <legend>Your Device:</legend> -->
 
-            <label><input type="radio" id="platform-pc" name="platform" value="pc" checked /> PC</label>
-            <label><input type="radio" id="platform-xbox" name="platform" value="xbox" /> Xbox</label>
-            <label><input type="radio" id="platform-ps" name="platform" value="ps" /> PS</label>
-
+            <label><input type="radio" id="platform-psn" name="platform" value="PSN" checked /> Playstation</label>
+            <label><input type="radio" id="platform-pc" name="platform" value="PC" /> PC</label>
+            <label><input type="radio" id="platform-xbox" name="platform" value="XBox" /> Xbox</label>
+            
           </fieldset>
         </fieldset>
-
-        <fieldset id="radio-rank">
+      
+        
+        <fieldset id="radio-rank" class="post-field">
           <legend>Your rank:</legend>
 
           <label><input type="radio" id="rank-bronze" name="rank" value="Bronze" checked /> Bronze</label>
+          <label><input type="radio" id="rank-silver" name="rank" value="Silver" /> Silver</label>
           <label><input type="radio" id="rank-gold" name="rank" value="Gold" /> Gold</label>
           <label><input type="radio" id="rank-platinum" name="rank" value="Platinum" /> Platinum</label>
           <label><input type="radio" id="rank-diamond" name="rank" value="Diamond" /> Diamond</label>
           <label><input type="radio" id="rank-crimson" name="rank" value="Crimson" /> Crimson</label>
-          <label><input type="radio" id="rank-iridescent" name="rank" value="Iridescent" /> Iridescent</label>
+          <label><input type="radio" id="rank-iridescent" name="rank" value="Iridescent" /> Iridesc.</label>
 
         </fieldset>
 
-        <fieldset id="radio-partysize">
-          <legend>Party Size:</legend>
+        <fieldset id="radio-partysize" class="post-field-tiny">
+          <legend>Party:</legend>
 
           <label><input type="radio" id="party-solo" name="party" value=1 checked /> Solo</label>
           <label><input type="radio" id="party-duo" name="party" value=2 /> Duo</label>
@@ -51,7 +54,7 @@
 
         </fieldset>
 
-        <fieldset id="post-timer">
+        <fieldset id="post-timer" class="post-field">
           <legend>Post Life:</legend>
 
           <label><input type="radio" id="ttl-30min" name="ttl" value=30 checked /> 30 Mins.</label>
@@ -60,7 +63,7 @@
 
         </fieldset>
 
-        <fieldset>
+        <fieldset class="post-field">
           <legend>Other Stuff:</legend>
 
           <label><input type="checkbox" id="hasMic" name="hasMic" value="true" checked /> Uses mic</label>
@@ -68,13 +71,15 @@
 
         </fieldset>
 
-        <fieldset>
+        <fieldset class="post-field-large">
           <legend>Extra Notes:</legend>
           <textarea id="extra-notes" name="message" rows="4" cols="20" maxlength="100"
             placeholder="Must be an adult, etc..."></textarea>
         </fieldset>
 
-        <input type="submit" value="Join the club">
+      </div>
+
+        <input type="submit" value="Join the club" id="player-submit-button">
       </form>
     </div>
 
@@ -94,7 +99,7 @@
       <!-- Yes, my post is hardcoded at the top. I feel no shame -->
       <tr class="post-row">
         <td class="post-element">Catch A Stabbin#9697202</td>
-        <td class="post-element">pc</td>
+        <td class="post-element">PC</td>
         <td class="post-element">Platinum</td>
         <td class="post-element">1</td>
         <td class="post-element">A while ago</td>
@@ -113,10 +118,11 @@
             row.className = "post-row"
             postTable.appendChild(row)
 
-            const doRow = e => {
+            const doRow = (e, className) => {
+              className ||= 'post-element'
               const el = document.createElement('td')
               el.textContent = e
-              el.className = 'post-element'
+              el.className = className
 
               // Alternate row colors
               if (r.indexOf(post) % 2 === 0) {
