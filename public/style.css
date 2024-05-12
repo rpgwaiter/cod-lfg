@@ -1,5 +1,5 @@
 h1 {
-  font-family:Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 4em;
   color: #3eb5f1;
   margin: 0;
@@ -11,13 +11,20 @@ h2 {
   color: aliceblue;
 }
 
-
 .centered {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+
+  width: 80vw;
+  /* set the width to the full viewport width */
+  height: 80vh;
+  /* set the height to the full viewport height */
+  display: flexbox;
+  justify-content: center;
+  align-items: center;
 }
 
 body {
@@ -25,25 +32,12 @@ body {
   color: gainsboro;
 }
 
-form {
-  display: flex;
-  border: 1px solid hotpink;
-}
-
 label {
   display: inline-block;
 }
 
-form > input[type="text"] {
-  margin-right: 10px; 
-}
-
-fieldset {
-  display: flex;
-  flex-direction: column; 
-  justify-content: center;
-  align-items: center;
-  min-width: 90px;
+form>input[type="text"] {
+  margin-right: 10px;
 }
 
 /* Post Table Stuff */
@@ -53,11 +47,74 @@ fieldset {
 }
 
 .post-element {
-  margin: 3px;
+  margin: 5px;
   overflow-wrap: break-word;
-  max-width: 250px;
+  max-width: 200px;
+}
+
+.post-field {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-width: 90px;
+  flex-grow: 2;
+}
+
+.post-field-large {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  min-width: 22%;
+  flex-grow: 3;
+}
+
+.post-field-tiny {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  min-width: 60px;
+  flex-grow: 1;
 }
 
 .post-table-head {
   background-color: rgb(46, 46, 46);
+}
+
+#form-submit-player {
+  border: 1px solid hotpink;
+  padding: 20px;
+}
+
+.input-grid {
+  display: flex;
+}
+
+.spanner {
+  flex-grow: 1;
+}
+
+#player-submit-button {
+  margin-top: 2%;
+  padding: 5px;
+  width: calc(100% - 2em);
+}
+
+
+/* Phone specific styling */
+@media only screen and (max-width: 1024px) {
+  .centered {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    width: 95vw;
+    /* set the width to the full viewport width */
+    height: 95vh;
+    /* set the height to the full viewport height */
+    display: flexbox;
+    justify-content: center;
+    align-items: center;
+  }
 }
