@@ -1,12 +1,13 @@
-# cod-lfg - dead simple ranked Call of Duty party finder
+# cod-lfg - Dead Simple Ranked Call of Duty Party Finder
 
-Hosted: https://cod.social
+## Hosted: https://cod.social
 
 Why doesn't this exist already? Are there that few people playing ranked cod multiplayer?
 
 Anyways, use cod-lfg to post your info in the hopes of getting added to a group of ranked CoD players
 
-(TODO: Screenshot here)
+
+![screenshot of the hosted version of the site, likely out of date](screenshot.png?raw=true)
 
 ## Goals
 
