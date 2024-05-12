@@ -1,0 +1,14 @@
+name = "codfriends"
+main = "src/index.ts"
+compatibility_date = "2022-05-03"
+workers_dev = true
+
+routes = [{ pattern = "cod.social", custom_domain = true }]
+
+[site]
+bucket = "./public"
+
+[[kv_namespaces]]
+binding = "CODSOCIAL"
+id = "423b4920d78649a38a0684579d4293be"
+preview_id = "423b4920d78649a38a0684579d4293be"
