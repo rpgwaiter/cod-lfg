@@ -43,12 +43,10 @@ fieldset {
   flex-direction: column; 
   justify-content: center;
   align-items: center;
-  /* max-width: 550px; */
-  min-width: 120px;
+  min-width: 90px;
 }
 
 /* Post Table Stuff */
-
 #post-table {
   border: 1px solid hotpink;
   width: calc(100%);
