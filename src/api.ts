@@ -17,6 +17,7 @@ export async function apiHandler (request: Request, env) {
       noLife: !!s.get('noLife'),
       party: s.get('party'),
       ttl: Number(s.get('ttl') || 60),
+      isMuted: !!s.get('isMuted'),
       posted: now,
       message: message && encodeURIComponent(message)
     }

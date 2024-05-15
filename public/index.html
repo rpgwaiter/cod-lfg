@@ -16,82 +16,81 @@
     <div class="container">
       <form action="/api/submit" id="form-submit-player">
 
+
         <fieldset>
-        <div class="input-grid">
-          
+          <div class="input-grid">
+            <div class="spanner">
+              <label>ATVI ID: <br /><input type="text" name="atvid" id="form-atvid"></label>
+            </div>
 
-          <!-- <fieldset id="pii" class="post-field-large">
-            <legend>Your Info:</legend> -->
-          <div class="spanner">
-            <label>ATVI ID: <br /><input type="text" name="atvid" id="form-atvid"></label>
+            <div class="spanner">
+              <label>Extra Notes: <br /><textarea id="extra-notes" name="message" rows="2" cols="30" maxlength="100"
+                  placeholder="Must be an adult, etc..."></textarea></label>
+            </div>
           </div>
-
-          <!-- <fieldset class="post-field-large"> -->
-          <!-- <legend>Extra Notes:</legend> -->
-          <div class="spanner">
-            <label>Extra Notes: <br /><textarea id="extra-notes" name="message" rows="2" cols="30" maxlength="100"
-              placeholder="Must be an adult, etc..."></textarea></label>
-          </div>
-
-          <!-- </fieldset> -->
+        </fieldset>
         
-        </div>
-      </fieldset>
+        <div class="input-grid">
+          <fieldset id="radio-rank" class="post-field">
+            <legend>Your rank:</legend>
 
+            <input type="radio" id="rank-bronze" name="rank" value="Bronze" checked />
+            <label for="rank-bronze" style="background-color: #786c3d;"> Bronze</label>
+
+            <input type="radio" id="rank-silver" name="rank" value="Silver" />
+            <label style="background-color: #888888;" for="rank-silver"> Silver</label>
+
+            <input type="radio" id="rank-gold" name="rank" value="Gold" />
+            <label style="background-color: #caaf5f;" for="rank-gold"> Gold</label>
+
+            <input type="radio" id="rank-platinum" name="rank" value="Platinum" />
+            <label style="background-color: #34a18c;" for="rank-platinum"> Platinum</label>
+
+            <input type="radio" id="rank-diamond" name="rank" value="Diamond" />
+            <label style="background-color: #3072af;" for="rank-diamond">Diamond</label>
+
+            <input type="radio" id="rank-crimson" name="rank" value="Crimson" />
+            <label style="background-color: #ba344a;" for="rank-crimson"> Crimson</label>
+
+            <input type="radio" id="rank-iridescent" name="rank" value="Iridescent" />
+            <label style="background-color: #b54ee5;" for="rank-iridescent">Iridescent</label>
+          </fieldset>
+        </div>
 
         <div class="input-grid">
 
           <fieldset id="radio-platform" class="post-field">
             <legend>Your Device:</legend>
 
-            <label><input type="radio" id="platform-psn" name="platform" value="PSN" checked /> Playstation</label>
-            <label><input type="radio" id="platform-pc" name="platform" value="PC" /> PC</label>
-            <label><input type="radio" id="platform-xbox" name="platform" value="XBox" /> Xbox</label>
-
+            <input type="radio" id="platform-psn" name="platform" value="PSN" checked /><label for="platform-psn">Playstation</label>
+            <input type="radio" id="platform-pc" name="platform" value="PC" /><label for="platform-pc">PC</label>
+            <input type="radio" id="platform-xbox" name="platform" value="XBox" /><label for="platform-xbox">Xbox</label>
           </fieldset>
 
 
-          <fieldset id="radio-rank" class="post-field">
-            <legend>Your rank:</legend>
-
-            <label><input type="radio" id="rank-bronze" name="rank" value="Bronze" checked /> Bronze</label>
-            <label><input type="radio" id="rank-silver" name="rank" value="Silver" /> Silver</label>
-            <label><input type="radio" id="rank-gold" name="rank" value="Gold" /> Gold</label>
-            <label><input type="radio" id="rank-platinum" name="rank" value="Platinum" /> Platinum</label>
-            <label><input type="radio" id="rank-diamond" name="rank" value="Diamond" /> Diamond</label>
-            <label><input type="radio" id="rank-crimson" name="rank" value="Crimson" /> Crimson</label>
-            <label><input type="radio" id="rank-iridescent" name="rank" value="Iridescent" /> Iridesc.</label>
-
-          </fieldset>
-
-          <fieldset id="radio-partysize" class="post-field-tiny">
+          <fieldset id="radio-partysize" class="post-field">
             <legend>Party:</legend>
 
-            <label><input type="radio" id="party-solo" name="party" value=1 checked /> Solo</label>
-            <label><input type="radio" id="party-duo" name="party" value=2 /> Duo</label>
-            <label><input type="radio" id="party-trio" name="party" value=3 /> Trio</label>
-
+            <input type="radio" id="party-solo" name="party" value=1 checked /> <label for="party-solo">Solo</label>
+            <input type="radio" id="party-duo" name="party" value=2 /> <label for="party-duo">Duo</label>
+            <input type="radio" id="party-trio" name="party" value=3 /> <label for="party-trio">Trio</label>
           </fieldset>
 
           <fieldset id="post-timer" class="post-field">
             <legend>Post Life:</legend>
 
-            <label><input type="radio" id="ttl-30min" name="ttl" value=30 checked /> 30 Mins.</label>
-            <label><input type="radio" id="ttl-300min" name="ttl" value=300 /> 5 Hours</label>
-            <label><input type="radio" id="ttl-1month" name="ttl" value=43200 /> 1 Month</label>
-
+            <input type="radio" id="ttl-30min" name="ttl" value=30 checked /> <label for="ttl-30min">30 Mins.</label>
+            <input type="radio" id="ttl-300min" name="ttl" value=300 /><label for="ttl-300min">5 Hours</label>
+            <input type="radio" id="ttl-1month" name="ttl" value=43200 /><label for="ttl-1month">1 Month</label>
           </fieldset>
 
           <fieldset class="post-field">
             <legend>Other Stuff:</legend>
 
-            <label><input type="checkbox" id="hasMic" name="hasMic" value="true" checked /> Uses mic</label>
-            <!-- <label><input type="checkbox" id="noLife" name="noLife" value="true" /> I no-life cod</label> -->
-
+            <input type="checkbox" id="hasMic" name="hasMic" value="true" checked /><label for="hasMic">Uses mic</label>
+            <input type="checkbox" id="isMuted" name="isMuted" value="true" /><label for="isMuted">Voice Banned?</label>
+            <input type="checkbox" id="noLife" name="noLife" value="true" /><label for="noLife">I no-life cod</label>
           </fieldset>
-
-
-
         </div>
 
         <input type="submit" value="Join the club" id="player-submit-button">

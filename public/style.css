@@ -12,22 +12,18 @@ h2 {
 }
 
 .centered {
-  position: fixed;
+  position: relative;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  left: 25%;
   text-align: center;
-
-  width: 80vw;
-  height: 80vh;
-  display: flexbox;
-  justify-content: center;
-  align-items: center;
+  width: 50%;
+  padding: 20px;
 }
 
 body {
   background-color: black;
   color: gainsboro;
+  overflow-y: auto;
 }
 
 label {
@@ -58,22 +54,6 @@ form>input[type="text"] {
   flex-grow: 2;
 }
 
-.post-field-large {
-  display: grid;
-  align-items: center;
-  justify-content: center;
-  min-width: 22%;
-  flex-grow: 3;
-}
-
-.post-field-tiny {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  min-width: 60px;
-  flex-grow: 1;
-}
-
 .post-table-head {
   background-color: rgb(46, 46, 46);
 }
@@ -81,10 +61,13 @@ form>input[type="text"] {
 #form-submit-player {
   border: 1px solid hotpink;
   padding: 20px;
+  
 }
 
 .input-grid {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .spanner {
@@ -92,25 +75,62 @@ form>input[type="text"] {
 }
 
 #player-submit-button {
-  margin-top: 2%;
-  padding: 5px;
-  width: calc(100% - 2em);
+  margin-top: 1%;
+  padding: 15px;
+  width: calc(60% - 2em);
+  font-weight: bolder;
+  background-color: teal;
+  border-radius: 10px;
+  border-color: hotpink;
+  border-width: 6px;
 }
-
 
 /* Phone specific styling */
 @media only screen and (max-width: 1024px) {
   .centered {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    width: calc(100% - 10px);
     text-align: center;
-
-    width: 95vw;
-    height: 95vh;
-    display: flexbox;
-    justify-content: center;
-    align-items: center;
+    padding: 0;
+    left: 0%;
+    margin-left: 5px;
+    margin-right: 5px;
   }
+}
+
+.post-field input {
+  display: none;
+}
+
+.post-field input:checked+label {
+  border-color: hotpink !important;
+}
+
+.post-field label {
+  background-color: midnightblue;
+  padding: 4px 11px;
+  margin: 4px;
+  font-family: Arial;
+  font-size: 16px;
+  cursor: pointer;
+  border-style: solid;
+  border-color: rgb(0, 49, 129);
+  border-width: 6px;
+  padding-left: calc(50vh / 8);
+  padding-right: calc(50vh / 8);
+  padding-top: calc(20vh / 8);
+  padding-bottom: calc(20vh / 8);
+  user-select: none;
+  border-radius: 20px;
+}
+
+#radio-rank {
+  display: flex;
+  flex-direction: row !important;
+  flex-wrap: wrap;
+}
+
+#radio-rank label {
+  color: black;
+  font-weight: bold;
 }
