@@ -98,6 +98,12 @@ form>input[type="text"] {
   }
 }
 
+@media (min-width: 1025px) {
+  .post-field input:hover+label {
+    border-color: greenyellow;
+  }
+}
+
 .post-field input {
   display: none;
 }
