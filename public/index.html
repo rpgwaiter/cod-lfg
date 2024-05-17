@@ -17,19 +17,14 @@
       <form action="/api/submit" id="form-submit-player">
 
 
-        <fieldset>
-          <div class="input-grid">
-            <div class="spanner">
-              <label>ATVI ID: <br /><input type="text" name="atvid" id="form-atvid"></label>
-            </div>
 
-            <div class="spanner">
-              <label>Extra Notes: <br /><textarea id="extra-notes" name="message" rows="2" cols="30" maxlength="100"
-                  placeholder="Must be an adult, etc..."></textarea></label>
-            </div>
-          </div>
-        </fieldset>
-        
+
+        <div class="filled">
+          <label>ATVI ID: <br /><input type="text" name="atvid" id="form-atvid"></label>
+          <label>Extra Notes: <br /><textarea id="extra-notes" name="message" rows="2" cols="30" maxlength="100" placeholder="Must be an adult, etc..."></textarea></label>
+        </div>
+
+
         <div class="input-grid">
           <fieldset id="radio-rank" class="post-field">
             <legend>Your rank:</legend>
@@ -62,9 +57,11 @@
           <fieldset id="radio-platform" class="post-field">
             <legend>Your Device:</legend>
 
-            <input type="radio" id="platform-psn" name="platform" value="PSN" checked /><label for="platform-psn">Playstation</label>
+            <input type="radio" id="platform-psn" name="platform" value="PSN" checked /><label
+              for="platform-psn">Playstation</label>
             <input type="radio" id="platform-pc" name="platform" value="PC" /><label for="platform-pc">PC</label>
-            <input type="radio" id="platform-xbox" name="platform" value="XBox" /><label for="platform-xbox">Xbox</label>
+            <input type="radio" id="platform-xbox" name="platform" value="XBox" /><label
+              for="platform-xbox">Xbox</label>
           </fieldset>
 
 
@@ -87,8 +84,10 @@
           <fieldset class="post-field">
             <legend>Other Stuff:</legend>
 
-            <input type="checkbox" id="hasMic" name="hasMic" value="true" checked /><label for="hasMic">I use a mic</label>
-            <input type="checkbox" id="isMuted" name="isMuted" value="true" /><label for="isMuted">I am voice banned</label>
+            <input type="checkbox" id="hasMic" name="hasMic" value="true" checked /><label for="hasMic">I use a
+              mic</label>
+            <input type="checkbox" id="isMuted" name="isMuted" value="true" /><label for="isMuted">I am voice
+              banned</label>
             <input type="checkbox" id="noLife" name="noLife" value="true" /><label for="noLife">I no-life ranked</label>
           </fieldset>
         </div>

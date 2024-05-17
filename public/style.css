@@ -96,6 +96,12 @@ form>input[type="text"] {
     margin-left: 5px;
     margin-right: 5px;
   }
+  .post-field label {
+    font-size: 30px !important;
+  }
+  #player-submit-button {
+    font-size: 30px !important;
+  }
 }
 
 @media (min-width: 1025px) {
@@ -117,7 +123,7 @@ form>input[type="text"] {
   padding: 4px 11px;
   margin: 4px;
   font-family: Arial;
-  font-size: 16px;
+  font-size: 22px;
   cursor: pointer;
   border-style: solid;
   border-color: rgb(0, 49, 129);
@@ -139,4 +145,14 @@ form>input[type="text"] {
 #radio-rank label {
   color: black;
   font-weight: bold;
+}
+
+.filled {
+  width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filled input {
+  flex: 1;
 }
