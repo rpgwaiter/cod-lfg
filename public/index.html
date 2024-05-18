@@ -123,17 +123,17 @@
       const postTable = document.getElementById('post-table')
       function copyToClipboard(e) {
         const str = e.textContent
-        console.log('COPYING TO CLIPBOARD:', toCopy)
+        console.log('COPYING TO CLIPBOARD:', str)
 
         const tempElem = document.createElement("div")
         tempElem.setAttribute("style", "-webkit-user-select: text !important")
         // Use shadow DOM if available.
-        const spanParent = tempElem
+        let spanParent = tempElem
         if (tempElem.attachShadow) {
           spanParent = tempElem.attachShadow({ mode: "open" })
         }
 
-        const span = document.createElement("span")
+        let span = document.createElement("span")
         span.innerText = str
         spanParent.appendChild(span)
         document.body.appendChild(tempElem)
@@ -141,7 +141,7 @@
         // select
         if (sel) {
           const range = document.createRange()
-          range.selectNodeContents(elem)
+          range.selectNodeContents(span)
           sel.removeAllRanges()
           sel.addRange(range)
         }
