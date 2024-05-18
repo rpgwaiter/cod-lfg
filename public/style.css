@@ -160,4 +160,5 @@ form>input[type="text"] {
 
 .post-row td {
   font-size: 22px;
+  user-select: none;
 }

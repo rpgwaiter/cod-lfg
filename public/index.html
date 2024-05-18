@@ -122,11 +122,37 @@
     <script>
       const postTable = document.getElementById('post-table')
       function copyToClipboard(e) {
-        const toCopy = e.textContent
-        document.execCommand('copy', false, toCopy)
+        const str = e.textContent
+        console.log('COPYING TO CLIPBOARD:', toCopy)
 
-        // Alert the copied text
-        // alert("Copied the text: " + toCopy)
+        const tempElem = document.createElement("div")
+        tempElem.setAttribute("style", "-webkit-user-select: text !important")
+        // Use shadow DOM if available.
+        const spanParent = tempElem
+        if (tempElem.attachShadow) {
+          spanParent = tempElem.attachShadow({ mode: "open" })
+        }
+
+        const span = document.createElement("span")
+        span.innerText = str
+        spanParent.appendChild(span)
+        document.body.appendChild(tempElem)
+        const sel = document.getSelection()
+        // select
+        if (sel) {
+          const range = document.createRange()
+          range.selectNodeContents(elem)
+          sel.removeAllRanges()
+          sel.addRange(range)
+        }
+
+        const result = document.execCommand("copy")
+        // unselect
+        if (sel) {
+          sel.removeAllRanges()
+        }
+        document.body.removeChild(tempElem)
+        return result
       }
       fetch('/api/posts')
         .then(r => r.json())
