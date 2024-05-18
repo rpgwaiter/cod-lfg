@@ -19,7 +19,8 @@
 
         <div class="filled">
           <label>ATVI ID: <br /><input type="text" name="atvid" id="form-atvid" required></label>
-          <label>Extra Notes: <br /><textarea id="extra-notes" name="message" rows="2" cols="30" maxlength="100" placeholder="Must be an adult, etc..."></textarea></label>
+          <label>Extra Notes: <br /><textarea id="extra-notes" name="message" rows="2" cols="30" maxlength="100"
+              placeholder="Must be an adult, etc..."></textarea></label>
         </div>
 
         <div class="input-grid">
@@ -108,7 +109,7 @@
 
       <!-- Yes, my post is hardcoded at the top. I feel no shame -->
       <tr class="post-row">
-        <td class="post-element">Catch A Stabbin#9697202</td>
+        <td class="post-element" onclick="copyToClipboard(this)">Catch A Stabbin#9697202</td>
         <td class="post-element">PC</td>
         <td class="post-element">Platinum</td>
         <td class="post-element">1</td>
@@ -120,6 +121,13 @@
 
     <script>
       const postTable = document.getElementById('post-table')
+      function copyToClipboard(e) {
+        const toCopy = e.textContent
+        document.execCommand('copy', false, toCopy)
+
+        // Alert the copied text
+        // alert("Copied the text: " + toCopy)
+      }
       fetch('/api/posts')
         .then(r => r.json())
         .then(r => {
@@ -139,14 +147,17 @@
                 el.style = 'background-color: rgb(25, 25, 25);'
               }
               row.appendChild(el)
+              return el
             }
 
-            doRow(post.atvid)
+            const atv = doRow(post.atvid)
             doRow(post.platform)
             doRow(post.rank)
             doRow(post.party)
             doRow(post.relTime)
             doRow(decodeURIComponent(post.message))
+
+            atv.onclick = copyToClipboard
           }
         })
 

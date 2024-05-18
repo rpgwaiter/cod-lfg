@@ -157,3 +157,7 @@ form>input[type="text"] {
 .filled input {
   flex: 1;
 }
+
+.post-row td {
+  font-size: 22px;
+}
