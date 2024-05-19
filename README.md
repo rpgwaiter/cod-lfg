@@ -17,6 +17,7 @@ Anyways, use cod-lfg to post your info in the hopes of getting added to a group 
 - [ ] anti-abuse
 - [ ] styling
 - [x] CI
+- [ ] hitmarkers!
 - [ ] maybe a legal disclaimer?
 
 

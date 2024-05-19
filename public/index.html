@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <!-- <link rel="icon" type="image/x-icon" href="./favicon.ico" /> -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" />
   <link href="./style.css" rel="stylesheet" />
 </head>
@@ -152,6 +152,20 @@
           sel.removeAllRanges()
         }
         document.body.removeChild(tempElem)
+
+        e.textContent = 'Copied To Clipboard!'
+        const oldStyle = e.style
+
+        e.style += 'color: yellow !important;'
+
+        async function timeout (ms, t) {
+          await new Promise(resolve => setTimeout(resolve, ms))
+          e.textContent = t
+          e.style = oldStyle
+        }
+        timeout(2000, str)
+
+        
         return result
       }
       fetch('/api/posts')
