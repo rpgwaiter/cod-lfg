@@ -1,13 +1,13 @@
 :root {
   /* Colors */
-  --bronze: linear-gradient(45deg, #c18d43 0%, #6d3314 100%);
-  --silver: linear-gradient(45deg, #c5c1c0 0%, #434445 100%);
-  --gold: linear-gradient(45deg, #fbd528 0%, #edb017 100%);
-  --platinum: linear-gradient(45deg, #32fcf9 0%, #2ffccc 50%, #0eafad 100%);
-  --diamond: linear-gradient(45deg, #3984ca 0%, #185a97 100%);
-  --crimson: linear-gradient(45deg, #c32d46 0%, #881b2d 100%);
-  --iridescent: linear-gradient(45deg, #b54ee5 0%, #792cdd 100%);
-  --bluebutton: linear-gradient(45deg, rgb(48, 48, 178) 0%, rgb(22, 22, 115) 100%);
+  --bronze: linear-gradient(135deg, #c18d43 0%, #6d3314 100%);
+  --silver: linear-gradient(135deg, #c5c1c0 0%, #434445 100%);
+  --gold: linear-gradient(135deg, #fbd528 0%, #edb017 100%);
+  --platinum: linear-gradient(135deg, #32fcf9 0%, #2ffccc 50%, #0eafad 100%);
+  --diamond: linear-gradient(135deg, #3984ca 0%, #185a97 100%);
+  --crimson: linear-gradient(135deg, #c32d46 0%, #881b2d 100%);
+  --iridescent: linear-gradient(135deg, #b54ee5 0%, #792cdd 100%);
+  --bluebutton: linear-gradient(135deg, rgb(48, 48, 178) 0%, rgb(22, 22, 115) 100%);
   --post-table-head: rgb(46, 46, 46);
   --submit-bg: teal;
 
