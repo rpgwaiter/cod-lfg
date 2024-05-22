@@ -1,3 +1,26 @@
+:root {
+  /* Colors */
+  --bronze: linear-gradient(45deg, #c18d43 0%, #6d3314 100%);
+  --silver: linear-gradient(45deg, #c5c1c0 0%, #434445 100%);
+  --gold: linear-gradient(45deg, #fbd528 0%, #edb017 100%);
+  --platinum: linear-gradient(45deg, #32fcf9 0%, #2ffccc 50%, #0eafad 100%);
+  --diamond: linear-gradient(45deg, #3984ca 0%, #185a97 100%);
+  --crimson: linear-gradient(45deg, #c32d46 0%, #881b2d 100%);
+  --iridescent: linear-gradient(45deg, #b54ee5 0%, #792cdd 100%);
+  --bluebutton: linear-gradient(45deg, rgb(48, 48, 178) 0%, rgb(22, 22, 115) 100%);
+  --post-table-head: rgb(46, 46, 46);
+  --submit-bg: teal;
+
+  /* Borders */
+  --normal-border: 6px solid rgb(0, 49, 129);
+  --hover-border: greenyellow;
+  --form-border: 1px solid hotpink;
+  --checked-border: 6px solid hotpink;
+
+  /* Sizing */
+  --label-padding: calc(20vh / 8) calc(50vh / 8) calc(20vh / 8) calc(50vh / 8); /* TRBL */
+}
+
 h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 4em;
@@ -17,17 +40,66 @@ body {
   overflow-y: auto;
 }
 
-label {
-  display: inline-block;
+.input-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-form>input[type="text"] {
-  margin-right: 10px;
+#player-submit-button {
+  margin-top: 1%;
+  padding: 15px;
+  width: 50%;
+  font-weight: bolder;
+  background-color: var(--submit-bg);
+  border: var(--normal-border);
+  border-radius: 10px;
 }
+
+#player-submit-button:hover {
+  border: var(--checked-border);
+}
+
+.centered {
+  position: relative;
+  text-align: center;
+}
+
+/* Phone specific styling */
+@media only screen and (max-width: 1024px) {
+  .centered {
+    width: calc(100% - 10px);
+    padding: 0;
+    left: 0%;
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .post-field label {
+    font-size: 30px !important;
+  }
+
+  #player-submit-button {
+    font-size: 30px !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .post-field input:hover+label {
+    border-color: var(--hover-border);
+  }
+  .centered {
+    top: 50%;
+    left: 20%;
+    width: 60%;
+    padding: 20px;
+  }
+}
+
 
 /* Post Table Stuff */
 #post-table {
-  border: 1px solid hotpink;
+  border: var(--form-border);
   width: calc(100%);
 }
 
@@ -46,69 +118,7 @@ form>input[type="text"] {
 }
 
 .post-table-head {
-  background-color: rgb(46, 46, 46);
-}
-
-#form-submit-player {
-  border: 1px solid hotpink;
-  padding: 20px;
-}
-
-.input-grid {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.spanner {
-  flex-grow: 1;
-}
-
-#player-submit-button {
-  margin-top: 1%;
-  padding: 15px;
-  width: 50%;
-  font-weight: bolder;
-  background-color: teal;
-  border-radius: 10px;
-  border-color: hotpink;
-  border-width: 6px;
-}
-
-/* Phone specific styling */
-@media only screen and (max-width: 1024px) {
-  .centered {
-    position: relative;
-    width: calc(100% - 10px);
-    text-align: center;
-    padding: 0;
-    left: 0%;
-    margin-left: 5px;
-    margin-right: 5px;
-  }
-
-  .post-field label {
-    font-size: 30px !important;
-  }
-
-  #player-submit-button {
-    font-size: 30px !important;
-  }
-}
-
-@media (min-width: 1025px) {
-  .post-field input:hover+label {
-    border-color: greenyellow;
-  }
-
-  .centered {
-    position: relative;
-    top: 50%;
-    left: 20%;
-    text-align: center;
-    width: 60%;
-    padding: 20px;
-  }
+  background-color: var(--post-table-head);
 }
 
 .post-field input {
@@ -116,24 +126,19 @@ form>input[type="text"] {
 }
 
 .post-field input:checked+label {
-  border-color: hotpink !important;
+  border: var(--checked-border);
 }
 
 .post-field label {
-  background: linear-gradient(45deg, rgb(48, 48, 178) 0%, rgb(22, 22, 115) 100%);
+  background: var(--bluebutton);
   padding: 4px 11px;
   margin: 4px;
   font-family: Arial;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
-  border-style: solid;
-  border-color: rgb(0, 49, 129);
-  border-width: 6px;
-  padding-left: calc(50vh / 8);
-  padding-right: calc(50vh / 8);
-  padding-top: calc(20vh / 8);
-  padding-bottom: calc(20vh / 8);
+  border: var(--normal-border);
+  padding: var(--label-padding);
   user-select: none;
   border-radius: 20px;
 }
@@ -164,31 +169,36 @@ form>input[type="text"] {
   user-select: none;
 }
 
+#form-submit-player {
+  border: var(--form-border);
+  padding: 20px;
+}
+
 
 label[for="rank-bronze"] {
-  background: linear-gradient(45deg, #c18d43 0%, #6d3314 100%);
+  background: var(--bronze)
 }
 
 label[for="rank-silver"] {
-  background: linear-gradient(45deg, #878787 0%, #6b6b6b 100%);
+  background: var(--silver)
 }
 
 label[for="rank-gold"] {
-  background: linear-gradient(45deg, #fbd528 0%, #edb017 100%);
+  background: var(--gold)
 }
 
 label[for="rank-platinum"] {
-  background: linear-gradient(45deg, #32fcf9 0%, #2ffccc 50%, #0eafad 100%);
+  background: var(--platinum)
 }
 
 label[for="rank-diamond"] {
-  background: linear-gradient(45deg, #3984ca 0%, #185a97 100%);
+  background: var(--diamond)
 }
 
 label[for="rank-crimson"] {
-  background: linear-gradient(45deg, #c32d46 0%, #881b2d 100%);
+  background: var(--crimson)
 }
 
 label[for="rank-iridescent"] {
-  background: linear-gradient(45deg, #b54ee5 0%, #792cdd 100%);
+  background: var(--iridescent)
 }
