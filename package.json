@@ -7,10 +7,11 @@
 		"start": "wrangler dev --ip 0.0.0.0 src/index.ts"
 	},
 	"devDependencies": {
-		"@cloudflare/workers-types": "^4.20240502.0",
-		"wrangler": "^3.0.0"
+		"@cloudflare/workers-types": "^4.20240722.0",
+		"ts-standard": "^12.0.2",
+		"wrangler": "^3.66.0"
 	},
 	"dependencies": {
-		"@cloudflare/kv-asset-handler": "^0.3.2"
+		"@cloudflare/kv-asset-handler": "^0.3.4"
 	}
 }
