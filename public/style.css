@@ -103,6 +103,10 @@ body {
   width: calc(100%);
 }
 
+tr:nth-child(odd) {
+  background-color: var(--post-table-head) /*Light gray for odd rows */
+}
+
 .post-element {
   margin: 5px;
   overflow-wrap: break-word;
